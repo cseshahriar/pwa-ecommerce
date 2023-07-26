@@ -7,7 +7,7 @@
     
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="application-name" content="Easy Express">
+    <meta name="application-name" content="Nurjahan Ecommerce">
     <meta name="apple-mobile-web-app-title" content="Easy Express">
     <meta name="theme-color" content="#002e62">
     <meta name="msapplication-navbutton-color" content="#002e62">
@@ -18,6 +18,18 @@
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <title>Nurjahan Ecommerce</title>
+
+    <!-- notification -->
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" defer></script>
+    <script>
+      window.OneSignal = window.OneSignal || [];
+      OneSignal.push(function() {
+        OneSignal.init({
+          appId: "1bda3f60-0135-4b61-8ddf-cfc2bca85bd4",
+        });
+      });
+    </script>
+
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
