@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from '../pages/HomePage';
 
 class AppRoute extends Component {
+  
   render() {
     return (
        <Fragment>
