@@ -67,7 +67,7 @@ class Categories extends Component {
                 </Col>
               </Row>
             </Col>
-
+            
             <Col key={1} xl={6} lg={6} md={2} sm={12} xs={12}>
               <Row>
                 <Col className="p-0" key={1} xl={3} lg={3} md={3} sm={6} xs={6}>
@@ -125,6 +125,7 @@ class Categories extends Component {
             </Col>
           </Row>
 
+
           <Row>
             <Col key={1} xl={6} lg={6} md={2} sm={12} xs={12}>
               <Row>
@@ -181,6 +182,7 @@ class Categories extends Component {
                 </Col>
               </Row>
             </Col>
+
 
             <Col key={1} xl={6} lg={6} md={2} sm={12} xs={12}>
               <Row>
