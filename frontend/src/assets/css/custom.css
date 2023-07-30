@@ -15,6 +15,7 @@
 @import "common.css";
 @import "productDetails.css";
 @import "cartList.css";
+@import "fontawesome.css";
 
 body{
      background-color: #ffffff;
