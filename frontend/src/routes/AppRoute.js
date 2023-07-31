@@ -10,6 +10,8 @@ import PrivacyPage from '../pages/PrivacyPage';
 import PurchasePage from '../pages/PurchasePage';
 import RefundPage from '../pages/RefundPage';
 
+import ProductDetailsPage from '../pages/ProductDetailsPage';
+
 class AppRoute extends Component {
   
   render() {
@@ -23,6 +25,7 @@ class AppRoute extends Component {
                     <Route path="/purchase" element={<PurchasePage/>} />
                     <Route path="/privacy" element={<PrivacyPage/>} />
                     <Route path="/refund" element={<RefundPage/>} />
+                    <Route path="/productdetails" element={ProductDetailsPage} />
                 </Routes>
             </BrowserRouter>
        </Fragment>
