@@ -27,7 +27,7 @@ class Categories extends Component {
                   </Card>
                 </Col>
 
-                <Col className="p-0" key={1} xl={3} lg={3} md={3} sm={6} xs={6}>
+                <Col className="p-0" key={2} xl={3} lg={3} md={3} sm={6} xs={6}>
                   <Card className="h-100 w-100 text-center">
                     <Card.Body>
                       <img
@@ -40,7 +40,7 @@ class Categories extends Component {
                   </Card>
                 </Col>
 
-                <Col className="p-0" key={1} xl={3} lg={3} md={3} sm={6} xs={6}>
+                <Col className="p-0" key={3} xl={3} lg={3} md={3} sm={6} xs={6}>
                   <Card className="h-100 w-100 text-center">
                     <Card.Body>
                       <img
@@ -53,7 +53,7 @@ class Categories extends Component {
                   </Card>
                 </Col>
 
-                <Col className="p-0" key={1} xl={3} lg={3} md={3} sm={6} xs={6}>
+                <Col className="p-0" key={4} xl={3} lg={3} md={3} sm={6} xs={6}>
                   <Card className="h-100 w-100 text-center">
                     <Card.Body>
                       <img
@@ -68,7 +68,7 @@ class Categories extends Component {
               </Row>
             </Col>
             
-            <Col key={1} xl={6} lg={6} md={2} sm={12} xs={12}>
+            <Col key={2} xl={6} lg={6} md={2} sm={12} xs={12}>
               <Row>
                 <Col className="p-0" key={1} xl={3} lg={3} md={3} sm={6} xs={6}>
                   <Card className="h-100 w-100 text-center">
@@ -83,7 +83,7 @@ class Categories extends Component {
                   </Card>
                 </Col>
 
-                <Col className="p-0" key={1} xl={3} lg={3} md={3} sm={6} xs={6}>
+                <Col className="p-0" key={2} xl={3} lg={3} md={3} sm={6} xs={6}>
                   <Card className="h-100 w-100 text-center">
                     <Card.Body>
                       <img
@@ -96,7 +96,7 @@ class Categories extends Component {
                   </Card>
                 </Col>
 
-                <Col className="p-0" key={1} xl={3} lg={3} md={3} sm={6} xs={6}>
+                <Col className="p-0" key={3} xl={3} lg={3} md={3} sm={6} xs={6}>
                   <Card className="h-100 w-100 text-center">
                     <Card.Body>
                       <img
@@ -109,7 +109,7 @@ class Categories extends Component {
                   </Card>
                 </Col>
 
-                <Col className="p-0" key={1} xl={3} lg={3} md={3} sm={6} xs={6}>
+                <Col className="p-0" key={4} xl={3} lg={3} md={3} sm={6} xs={6}>
                   <Card className="h-100 w-100 text-center">
                     <Card.Body>
                       <img
@@ -127,7 +127,7 @@ class Categories extends Component {
 
 
           <Row>
-            <Col key={1} xl={6} lg={6} md={2} sm={12} xs={12}>
+            <Col key={3} xl={6} lg={6} md={2} sm={12} xs={12}>
               <Row>
                 <Col className="p-0" key={1} xl={3} lg={3} md={3} sm={6} xs={6}>
                   <Card className="h-100 w-100 text-center">
@@ -142,7 +142,7 @@ class Categories extends Component {
                   </Card>
                 </Col>
 
-                <Col className="p-0" key={1} xl={3} lg={3} md={3} sm={6} xs={6}>
+                <Col className="p-0" key={2} xl={3} lg={3} md={3} sm={6} xs={6}>
                   <Card className="h-100 w-100 text-center">
                     <Card.Body>
                       <img
@@ -155,7 +155,7 @@ class Categories extends Component {
                   </Card>
                 </Col>
 
-                <Col className="p-0" key={1} xl={3} lg={3} md={3} sm={6} xs={6}>
+                <Col className="p-0" key={3} xl={3} lg={3} md={3} sm={6} xs={6}>
                   <Card className="h-100 w-100 text-center">
                     <Card.Body>
                       <img
@@ -168,7 +168,7 @@ class Categories extends Component {
                   </Card>
                 </Col>
 
-                <Col className="p-0" key={1} xl={3} lg={3} md={3} sm={6} xs={6}>
+                <Col className="p-0" key={4} xl={3} lg={3} md={3} sm={6} xs={6}>
                   <Card className="h-100 w-100 text-center">
                     <Card.Body>
                       <img
@@ -184,7 +184,7 @@ class Categories extends Component {
             </Col>
 
 
-            <Col key={1} xl={6} lg={6} md={2} sm={12} xs={12}>
+            <Col key={4} xl={6} lg={6} md={2} sm={12} xs={12}>
               <Row>
                 <Col className="p-0" key={1} xl={3} lg={3} md={3} sm={6} xs={6}>
                   <Card className="h-100 w-100 text-center">
@@ -199,7 +199,7 @@ class Categories extends Component {
                   </Card>
                 </Col>
 
-                <Col className="p-0" key={1} xl={3} lg={3} md={3} sm={6} xs={6}>
+                <Col className="p-0" key={2} xl={3} lg={3} md={3} sm={6} xs={6}>
                   <Card className="h-100 w-100 text-center">
                     <Card.Body>
                       <img
@@ -212,7 +212,7 @@ class Categories extends Component {
                   </Card>
                 </Col>
 
-                <Col className="p-0" key={1} xl={3} lg={3} md={3} sm={6} xs={6}>
+                <Col className="p-0" key={3} xl={3} lg={3} md={3} sm={6} xs={6}>
                   <Card className="h-100 w-100 text-center">
                     <Card.Body>
                       <img
@@ -225,7 +225,7 @@ class Categories extends Component {
                   </Card>
                 </Col>
 
-                <Col className="p-0" key={1} xl={3} lg={3} md={3} sm={6} xs={6}>
+                <Col className="p-0" key={4} xl={3} lg={3} md={3} sm={6} xs={6}>
                   <Card className="h-100 w-100 text-center">
                     <Card.Body>
                       <img
