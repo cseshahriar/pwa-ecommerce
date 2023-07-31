@@ -8,7 +8,7 @@ class ProductDetails extends Component {
   render() {
     return (
       <Fragment>
-        <Container className="BetweenTwoSection">
+        <Container fluid={true}  className="BetweenTwoSection">
           <Row className="p-2">
             <Col
               className="shadow-sm bg-white pb-3 mt-4"

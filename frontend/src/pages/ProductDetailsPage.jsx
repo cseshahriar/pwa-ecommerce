@@ -4,6 +4,7 @@ import FooterMobile from '../components/common/FooterMobile'
 import NavMenuDesktop from '../components/common/NavMenuDesktop'
 import NavMenuMobile from '../components/common/NavMenuMobile'
 import ProductDetails from '../components/ProductDetails/ProductDetails'
+import SuggestedProduct from '../components/ProductDetails/SuggestedProduct'
 
 class ProductDetailsPage extends Component {
      componentDidMount(){
@@ -13,25 +14,26 @@ class ProductDetailsPage extends Component {
      render() {
           return (
                <Fragment> 
-               <div className="Desktop">
-                <NavMenuDesktop /> 
-               </div>
+                    <div className="Desktop">
+                         <NavMenuDesktop /> 
+                    </div>
 
-               <div className="Mobile">
-               <NavMenuMobile />  
-               </div>                       
+                    <div className="Mobile">
+                         <NavMenuMobile />  
+                    </div>                       
 
-               <ProductDetails /> 
+                    <ProductDetails /> 
+                    <SuggestedProduct/>
 
-               <div className="Desktop">
-               <FooterDesktop/>
-               </div>
+                    <div className="Desktop">
+                         <FooterDesktop/>
+                    </div>
 
-               <div className="Mobile">
-               <FooterMobile/>
-               </div>
+                    <div className="Mobile">
+                         <FooterMobile/>
+                    </div>
 
-          </Fragment>
+               </Fragment>
           )
      }
 }
