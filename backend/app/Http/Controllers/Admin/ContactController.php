@@ -10,12 +10,14 @@ class ContactController extends Controller
 {
     // createContact
     public function createContact(Request $request) {
+        date_default_timezone_set('Asia/Dhaka');
+        $contact_time = date('h:i:sa');
+        $contact_date = date('Y-m-d');
+
         $name = $request->input('name');
         $email = $request->input('email');
         $message = $request->input('message');
-        $contact_date = $request->input('contact_date');
-        $contact_time = $request->input('contact_time');
-
+    
         $contact = Contact::create([
             'name' => $name,
             'email' => $email,
