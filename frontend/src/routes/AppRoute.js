@@ -13,6 +13,7 @@ import RefundPage from '../pages/RefundPage';
 import ProductDetailsPage from '../pages/ProductDetailsPage';
 import NotificationPage from '../pages/NotificationPage';
 import FavouritePage from '../pages/FavouritePage';
+import CartPage from '../pages/CartPage';
 
 class AppRoute extends Component {
   
@@ -30,6 +31,7 @@ class AppRoute extends Component {
                     <Route path="/productdetails" element={<ProductDetailsPage/>} />
                     <Route path="/notification" element={<NotificationPage/>} />
                     <Route path="/favourite" element={<FavouritePage/>} />
+                    <Route path="/cart" element={<CartPage/>} />
                 </Routes>
             </BrowserRouter>
        </Fragment>
