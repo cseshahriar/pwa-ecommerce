@@ -12,10 +12,20 @@ import HomeTopMobile from '../components/home/HomeTopMobile'
 import FooterDesktop from '../components/common/FooterDesktop'
 import FooterMobile from '../components/common/FooterMobile'
 
+import AppURL from '../api/AppURL'
+import axios from 'axios'
+
 class HomePage extends Component {
-  componentDidMount(){
-    window.scroll(0,0)
+  // create and get visitor details
+  GetVisitorDetails =() => {
+    axios.get(AppURL.VisitorDetails).then().catch()
   }
+
+  componentDidMount() {
+    window.scroll(0,0);
+    this.GetVisitorDetails();
+  }
+
 
   render() {
     return (
