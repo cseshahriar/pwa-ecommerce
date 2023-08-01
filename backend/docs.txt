@@ -6,4 +6,7 @@ php artisan config:clear
 php artisan optimize
 php artisan migrate:reset 
 
+php artisan make:model Visitor -m
+php artisan migrate
+php artisan make:controller Admin/VisitorController 
 # javascript 
