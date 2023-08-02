@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\Admin\VisitorController;
 use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\SiteInfoController;
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
@@ -22,3 +23,10 @@ Route::post(
     '/contact/create', 
     [ContactController::class, 'createContact']
 )->name('contacts.createContact');
+
+
+// get site info
+Route::get(
+    '/site-info', 
+    [SiteInfoController::class, 'getSiteInfo']
+)->name('siteinfo.getSiteInfo');
