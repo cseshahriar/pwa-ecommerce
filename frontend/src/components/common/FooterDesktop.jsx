@@ -8,18 +8,19 @@ class FooterDesktop extends Component {
   render() {
     return (
       <Fragment>
-        <div className="footerback m-0 mt-5 pt-3 shadow-sm">
+        <div className="footerback m-0 mt-5 pt-3 shadow-sm"   
+          style={{position:'absolute', bottom:'0', right:'0', left:'0'}}>
           <Container>
             <Row className="px-0 my-5">
               <Col className="p-2" lg={3} md={3} sm={6} xs={12}>
                 <h5 className="footer-menu-title">THE COMPANY</h5>
-                <Link to="/" className="footer-link"> About Us</Link><br></br>
+                <Link to="/about" className="footer-link"> About Us</Link><br></br>
                 <Link to="/" className="footer-link"> Company Profile</Link><br></br>
                 <Link to="/contact" className="footer-link"> Contact Us</Link><br></br>
               </Col>
 
               <Col className="p-2" lg={3} md={3} sm={6} xs={12}>
-                <h5 className="footer-menu-title">THE COMPANY</h5>
+                <h5 className="footer-menu-title">TERMS & CONDITION</h5>
                 <Link to="/" className="footer-link">How To Purchase</Link><br></br>
                 <Link to="/" className="footer-link"> Privacy Policy</Link><br></br>
                 <Link to="/" className="footer-link"> Refund Policy </Link><br></br>
@@ -42,7 +43,8 @@ class FooterDesktop extends Component {
             </Row>
           </Container>
 
-          <Container fluid={true} className="text-center m-0 pt-3 pb-1 bg-dark">
+          <Container fluid={true} className="text-center m-0 pt-3 pb-1 bg-dark" 
+          >
               <Container>
                     <Row>
                       <h6 className="text-white">© Copyright 2021 by easy Shop, All Rights Reserved</h6>

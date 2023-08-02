@@ -18,7 +18,11 @@ import axios from 'axios'
 class HomePage extends Component {
   // create and get visitor details
   GetVisitorDetails =() => {
-    axios.get(AppURL.VisitorDetails).then().catch()
+    try{
+      axios.get(AppURL.VisitorDetails).then().catch()
+    } catch(error) {
+      console.error('Error:', error.message);
+    }
   }
 
   componentDidMount() {
