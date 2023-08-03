@@ -14,10 +14,12 @@ class SiteInfoController extends Controller
        public function getSiteInfo()
        {
             $siteInfo = SiteInfo::first();
-            return response()->json([
-               'success' => true,
-               'message' => 'Visitor details fetched successfully',
-               'data' => $siteInfo,
-            ]);
+            return $siteInfo;
+
+            // return response()->json([
+            //    'success' => true,
+            //    'message' => 'Visitor details fetched successfully',
+            //    'data' => $siteInfo,
+            // ]);
        }  
 }
