@@ -8,5 +8,7 @@ php artisan migrate:reset
 
 php artisan make:model Visitor -m
 php artisan migrate
-php artisan make:controller Admin/VisitorController 
+php artisan make:controller Admin/VisitorController
+php artisan storage:link
+
 # javascript 

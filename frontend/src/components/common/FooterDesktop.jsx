@@ -51,7 +51,6 @@ class FooterDesktop extends Component {
       <Fragment>
         <div
           className="footerback m-0 mt-5 pt-3 shadow-sm"
-          style={{ position: "absolute", bottom: "0", right: "0", left: "0" }}
         >
           <Container>
             <Row className="px-0 my-5">

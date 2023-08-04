@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\VisitorController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\SiteInfoController;
+use App\Http\Controllers\Admin\CategoryController;
 
 // Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 //     return $request->user();
@@ -30,3 +31,9 @@ Route::get(
     '/site-info', 
     [SiteInfoController::class, 'getSiteInfo']
 )->name('siteinfo.getSiteInfo');
+
+// get site info
+Route::get(
+    '/categories',
+    [CategoryController::class, 'index']
+)->name('categories.index');
