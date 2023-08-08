@@ -11,4 +11,7 @@ php artisan migrate
 php artisan make:controller Admin/VisitorController
 php artisan storage:link
 
+php artisan make:model Product -m
+php artisan make:migration add_start_to_products  # add new field star
+
 # javascript 
