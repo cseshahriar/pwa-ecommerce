@@ -4,19 +4,46 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
+import AppURL from "../../api/AppURL";
+import axios from "axios";
+
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Link } from "react-router-dom";
+
 class NewArrival extends Component {
   constructor(props) {
     super(props);
     this.next = this.next.bind(this);
-    this.previous = this.previous.bind(this)
+    this.previous = this.previous.bind(this);
+
+    // state
+    this.state = {
+      products: [],
+      loaderDiv: "",
+      mainDiv: "d-none",
+    };
   }
 
-  next(){
+  next() {
     this.slider.slickNext();
   }
 
-  previous(){
+  previous() {
     this.slider.slickPrev();
+  }
+
+  componentDidMount() {
+    axios
+      .get(AppURL.getProductByRemark("new"))
+      .then((response) => {
+        this.setState({ products: response.data });
+      })
+      .catch((error) => {
+        toast.error("Something Went Wrong", {
+          position: "bottom-center",
+        });
+      });
   }
 
   render() {
@@ -58,23 +85,52 @@ class NewArrival extends Component {
       ],
     };
 
+    const MyView = this.state.products.map((NewList, i) => {
+      if (NewList.special_price == "na") {
+        return (
+          <div>
+            <Card className="image-box card">
+              <img className="center" src={NewList.image} alt="" />
+              <Card.Body>
+                <p className="product-name-on-card">{NewList.title}</p>
+                <p className="product-price-on-card">
+                  Price : ${NewList.price}
+                </p>
+              </Card.Body>
+            </Card>
+          </div>
+        );
+      } else {
+        return (
+          <div>
+            <Card className="image-box card">
+              <img className="center" src={NewList.image} alt="" />
+              <Card.Body>
+                <p className="product-name-on-card">{NewList.title}</p>
+                <p className="product-price-on-card">
+                  Price :{" "}
+                  <strike className="text-secondary">${NewList.price}</strike> $
+                  {NewList.special_price}
+                </p>
+              </Card.Body>
+            </Card>
+          </div>
+        );
+      }
+    });
+
     return (
       <Fragment>
         <Container className="text-center" fluid={true}>
           <div className="section-title text-center mb-55">
-            <h2>NEW ARRIVAL &nbsp;
-              <a
-                className="btn btn-sm ml-2 site-btn" 
-                onClick={this.previous} >
-                  <i className="fa fa-angle-left"></i>
+            <h2>
+              NEW ARRIVAL &nbsp;
+              <a className="btn btn-sm ml-2 site-btn" onClick={this.previous}>
+                <i className="fa fa-angle-left"></i>
               </a>
-
               &nbsp;
-              
-              <a 
-                className="btn btn-sm ml-2 site-btn" 
-                onClick={this.next}>
-                  <i className="fa fa-angle-right"></i>
+              <a className="btn btn-sm ml-2 site-btn" onClick={this.next}>
+                <i className="fa fa-angle-right"></i>
               </a>
             </h2>
 
@@ -82,135 +138,8 @@ class NewArrival extends Component {
           </div>
 
           <Row>
-            <Slider ref={c=>(this.slider=c)} {...settings}>
-
-              <Col>
-                <Card className="image-box card">
-                  <img
-                    alt=""
-                    className="center"
-                    src="https://rukminim1.flixcart.com/image/800/960/k7z3afk0/watch/t/c/x/lcs-8188-lois-caron-original-imafq3k9ztzdkyhe.jpeg?q=50"
-                  />
-                  <Card.Body>
-                    <p className="product-name-on-card">
-                      Realme C21 (Cross Black, 64 GB)
-                    </p>
-                    <p className="product-price-on-card">Price : $120</p>
-                  </Card.Body>
-                </Card>
-              </Col>
-
-              <Col>
-                <Card className="image-box card">
-                  <img
-                    alt=""
-                    className="center"
-                    src="https://rukminim1.flixcart.com/image/800/960/jeka07k0/watch/4/p/y/38024pp25-fastrack-original-imaf37n5df3bn52n.jpeg?q=50"
-                  />
-                  <Card.Body>
-                    <p className="product-name-on-card">
-                      Realme C21 (Cross Black, 64 GB)
-                    </p>
-                    <p className="product-price-on-card">Price : $120</p>
-                  </Card.Body>
-                </Card>
-              </Col>
-
-              <Col>
-                <Card className="image-box card">
-                  <img
-                    alt=""
-                    className="center"
-                    src="https://rukminim1.flixcart.com/image/800/960/kka1si80/watch/4/t/k/tw-02524-teenager-luxurious-fashion-silicone-black-colored-led-original-imafznht7bzfmj7d.jpeg?q=50"
-                  />
-                  <Card.Body>
-                    <p className="product-name-on-card">
-                      Realme C21 (Cross Black, 64 GB)
-                    </p>
-                    <p className="product-price-on-card">Price : $120</p>
-                  </Card.Body>
-                </Card>
-              </Col>
-
-              <Col>
-                <Card className="image-box card">
-                  <img
-                    alt="" 
-                    className="center"
-                    src="https://rukminim1.flixcart.com/image/800/960/jw0zr0w0/watch/c/u/r/ls2811-limestone-original-imafgrxqf8qvecjd.jpeg?q=50"
-                  />
-                  <Card.Body>
-                    <p className="product-name-on-card">
-                      Realme C21 (Cross Black, 64 GB)
-                    </p>
-                    <p className="product-price-on-card">Price : $120</p>
-                  </Card.Body>
-                </Card>
-              </Col>
-
-              <Col>
-                <Card className="image-box card">
-                  <img
-                    alt=""
-                    className="center"
-                    src="https://rukminim1.flixcart.com/image/800/960/jcxoya80/watch/z/n/h/skmei-sports-multifunctional-dual-time-digital-blue-dial-men-s-original-imaffykneyfryvqh.jpeg?q=50"
-                  />
-                  <Card.Body>
-                    <p className="product-name-on-card">
-                      Realme C21 (Cross Black, 64 GB)
-                    </p>
-                    <p className="product-price-on-card">Price : $120</p>
-                  </Card.Body>
-                </Card>
-              </Col>
-
-              <Col>
-                <Card className="image-box card">
-                  <img
-                    alt=""
-                    className="center"
-                    src="https://rukminim1.flixcart.com/image/800/960/kpodocw0/watch/p/l/t/anlg-428-blue-blu-analogue-original-imag3uxbhfkyhahf.jpeg?q=50"
-                  />
-                  <Card.Body>
-                    <p className="product-name-on-card">
-                      Realme C21 (Cross Black, 64 GB)
-                    </p>
-                    <p className="product-price-on-card">Price : $120</p>
-                  </Card.Body>
-                </Card>
-              </Col>
-
-              <Col>
-                <Card className="image-box card">
-                  <img
-                    alt=""
-                    className="center"
-                    src="https://rukminim1.flixcart.com/image/800/960/k48rwcw0/watch/k/v/f/lcs-8190-lois-caron-original-imafn7fsyttnpybp.jpeg?q=50"
-                  />
-                  <Card.Body>
-                    <p className="product-name-on-card">
-                      Realme C21 (Cross Black, 64 GB)
-                    </p>
-                    <p className="product-price-on-card">Price : $120</p>
-                  </Card.Body>
-                </Card>
-              </Col>
-
-              <Col>
-                <Card className="image-box card">
-                  <img
-                    alt=""
-                    className="center"
-                    src="https://rukminim1.flixcart.com/image/800/960/ke353m80-0/watch/e/b/s/fresh-new-arrival-latest-men-watch-watches-men-ghadi-gents-boys-original-imafuupqgaanhtxu.jpeg?q=50"
-                  />
-                  <Card.Body>
-                    <p className="product-name-on-card">
-                      Realme C21 (Cross Black, 64 GB)
-                    </p>
-                    <p className="product-price-on-card">Price : $120</p>
-                  </Card.Body>
-                </Card>
-              </Col>
+            <Slider ref={(c) => (this.slider = c)} {...settings}>
+              {MyView}
             </Slider>
           </Row>
         </Container>
