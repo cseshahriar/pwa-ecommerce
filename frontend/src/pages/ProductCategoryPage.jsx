@@ -14,6 +14,8 @@ import AppRoute from '../routes/AppRoute'
 
 import { useParams } from 'react-router-dom'
 
+import withRouter from '../withRouter';
+
 class ProductCategoryPage extends Component {
 
   constructor(props) {
@@ -71,15 +73,8 @@ class ProductCategoryPage extends Component {
      }
 }
 
-// export default ProductCategoryPage
+export default withRouter(ProductCategoryPage)
 
-// export default (props) => {
-//   <ProductCategoryPage 
-//     {...props}
-//     params={useParams()}
-//    />
-// }
-
-export default (props) => (
-  <ProductCategoryPage {...props} params={useParams()} /> 
-);
+// export default (props) => (
+//   <ProductCategoryPage {...props} params={useParams()} /> 
+// );
