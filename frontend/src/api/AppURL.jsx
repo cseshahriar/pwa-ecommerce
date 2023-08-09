@@ -16,15 +16,15 @@ class AppURL {
 
     // product
     static getProductByRemark(remark){
-        return this.BaseURL + `/products/remark/${remark}`
+        return `${this.BaseURL}/products/remark/${remark}`
     }
     
     static getProductByCategory(category) {
-        return this.BaseURL + `/products/category/${category}`
+        return `${this.BaseURL}/products/category/${category}`
     }
 
     static getProductBySubCategory(category, subcategory) {
-        return this.BaseURL + `/products/category/${category}/${subcategory}`
+        return `${this.BaseURL}/products/category/${category}/${subcategory}`
     }
 
 }

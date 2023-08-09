@@ -88,7 +88,7 @@ class NewArrival extends Component {
     const MyView = this.state.products.map((NewList, i) => {
       if (NewList.special_price == "na") {
         return (
-          <div>
+          <div key={i}>
             <Card className="image-box card">
               <img className="center" src={NewList.image} alt="" />
               <Card.Body>
@@ -102,7 +102,7 @@ class NewArrival extends Component {
         );
       } else {
         return (
-          <div>
+          <div key={i}>
             <Card className="image-box card">
               <img className="center" src={NewList.image} alt="" />
               <Card.Body>

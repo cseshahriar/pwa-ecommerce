@@ -55,10 +55,10 @@ Route::get(
 Route::get(
     '/products/category/{category}',
     [ProductController::class, 'productByCategory']
-)->name('products.remarks');
+)->name('products.category');
 
 // get product by category
 Route::get(
     '/products/category/{category}/{subcategory}',
     [ProductController::class, 'productBySubCategory']
-)->name('products.remarks');
+)->name('products.subcategory');

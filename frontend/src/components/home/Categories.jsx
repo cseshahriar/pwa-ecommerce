@@ -7,6 +7,7 @@ import axios from 'axios'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+import { Link } from 'react-router-dom';
 
 class Categories extends Component {
   constructor(){
@@ -32,6 +33,7 @@ class Categories extends Component {
        // generate categoriesView
        const categoriesView =  this.state.categories.map((category, i) => {
         return <Col key={i.toString()} className="p-0 mb-3" xl={2} lg={2} md={2} sm={6} xs={6}>
+           <Link to={"/productcategory/"+category.category_name}>   
           <Card className="h-100 w-100 text-center">
             <Card.Body>
               <img
@@ -42,6 +44,7 @@ class Categories extends Component {
               <h5 className="category-name">{category.category_name}</h5>
             </Card.Body>
           </Card>
+          </Link>
         </Col>
       })
 
