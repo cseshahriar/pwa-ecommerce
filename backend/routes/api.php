@@ -59,6 +59,6 @@ Route::get(
 
 // get product by category
 Route::get(
-    '/products/category/{category}/{subcategory}',
+    '/products/subcategory/{category}/{subcategory}',
     [ProductController::class, 'productBySubCategory']
 )->name('products.subcategory');

@@ -10,9 +10,6 @@ import axios from 'axios'
 import AppURL from '../api/AppURL'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import AppRoute from '../routes/AppRoute'
-
-import { useParams } from 'react-router-dom'
 
 import withRouter from '../withRouter';
 

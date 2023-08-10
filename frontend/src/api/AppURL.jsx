@@ -24,7 +24,7 @@ class AppURL {
     }
 
     static getProductBySubCategory(category, subcategory) {
-        return `${this.BaseURL}/products/category/${category}/${subcategory}`
+        return `${this.BaseURL}/products/subcategory/${category}/${subcategory}`
     }
 
 }
