@@ -6,7 +6,8 @@ import AppURL from "../../api/AppURL";
 import axios from "axios";
 
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
+import FeaturedLoading from '../PlaceHolder/FeaturedLoading';
 
 class FeaturedProducts extends Component {
   constructor() {
@@ -24,13 +25,13 @@ class FeaturedProducts extends Component {
     axios
       .get(AppURL.getProductByRemark("featured"))
       .then((response) => {
-        this.setState({ products: response.data });
-      })
-      .catch((error) => {
-        toast.error("Something Went Wrong", {
-          position: "bottom-center",
+        this.setState({
+          products: response.data,
+          isLoading:"d-none",
+          mainDiv:""
         });
-      });
+      })
+      .catch((error) => {});
   }
 
   render() {
@@ -82,14 +83,16 @@ class FeaturedProducts extends Component {
 
     return (
       <Fragment>
-        <Container className="text-center" fluid={true}>
-          <div className="section-title text-center mb-55">
-            <h2>Feature Product</h2>
-            <p>Some of Our Exclusive Collection You may like</p>
-          </div>
-
-          <Row>{MyView}</Row>
-        </Container>
+        <FeaturedLoading isLoading={this.state.isLoading} />
+        <div className={this.state.mainDiv}>
+          <Container className="text-center" fluid={true}>
+            <div className="section-title text-center mb-55">
+              <h2>Feature Product</h2>
+              <p>Some of Our Exclusive Collection You may like</p>
+            </div>
+            <Row>{MyView}</Row>
+          </Container>
+         </div>
         <ToastContainer />
       </Fragment>
     );

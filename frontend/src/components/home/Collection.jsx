@@ -5,7 +5,8 @@ import AppURL from "../../api/AppURL";
 import axios from "axios";
 
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
+import CollectionLoading from '../PlaceHolder/CollectionLoading';
 
 class Collection extends Component {
   constructor() {
@@ -23,13 +24,13 @@ class Collection extends Component {
     axios
       .get(AppURL.getProductByRemark("collection"))
       .then((response) => {
-        this.setState({ products: response.data });
-      })
-      .catch((error) => {
-        toast.error("Something Went Wrong", {
-          position: "bottom-center",
+        this.setState({ 
+          products: response.data, 
+          isLoading:"d-none",
+          mainDiv:" " 
         });
-      });
+      })
+      .catch((error) => {});
   }
 
   render() {
@@ -81,14 +82,18 @@ class Collection extends Component {
 
     return (
       <Fragment>
-        <Container className="text-center" fluid={true}>
-          <div className="section-title text-center mb-55">
-            <h2> PRODUCT COLLECTION</h2>
-            <p>Some Of Our Exclusive Collection, You May Like</p>
-          </div>
+        <CollectionLoading  isLoading={this.state.isLoading} />
 
-          <Row>{productView}</Row>
-        </Container>
+        <div className={this.state.mainDiv}>
+          <Container className="text-center" fluid={true}>
+            <div className="section-title text-center mb-55">
+              <h2> PRODUCT COLLECTION</h2>
+              <p>Some Of Our Exclusive Collection, You May Like</p>
+            </div>
+
+            <Row>{productView}</Row>
+          </Container>
+        </div>
 
         <ToastContainer />
       </Fragment>

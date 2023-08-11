@@ -19,11 +19,7 @@ class MegaMenuAll extends Component {
     axios.get(AppURL.getCategories).then(response =>{ 
           this.setState({categories:response.data});
 
-    }).catch(error=>{
-      toast.error("Something Went Wrong",{
-        position: "bottom-center"
-      });
-    });
+    }).catch(error => {});
   }
 
   MenuItemClick = (event) => {

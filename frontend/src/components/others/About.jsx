@@ -24,8 +24,6 @@ class About extends Component {
          let StatusCode = response.status;
          if(StatusCode == 200){
               let JsonData = (response.data);
-              console.log('json data', JsonData);
-              this.setState({about:JsonData.about});
               this.setState({
                 about:JsonData.about, 
                 loaderDiv:"d-none",

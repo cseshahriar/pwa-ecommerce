@@ -8,8 +8,9 @@ import AppURL from "../../api/AppURL";
 import axios from "axios";
 
 import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
+
+import NewArrivalLoading from '../PlaceHolder/NewArrivalLoading';
 
 class NewArrival extends Component {
   constructor(props) {
@@ -37,12 +38,13 @@ class NewArrival extends Component {
     axios
       .get(AppURL.getProductByRemark("new"))
       .then((response) => {
-        this.setState({ products: response.data });
+        this.setState({
+          products: response.data,
+          isLoading:"d-none",
+          mainDiv:"" 
+        });
       })
       .catch((error) => {
-        toast.error("Something Went Wrong", {
-          position: "bottom-center",
-        });
       });
   }
 
@@ -121,28 +123,32 @@ class NewArrival extends Component {
 
     return (
       <Fragment>
-        <Container className="text-center" fluid={true}>
-          <div className="section-title text-center mb-55">
-            <h2>
-              NEW ARRIVAL &nbsp;
-              <a className="btn btn-sm ml-2 site-btn" onClick={this.previous}>
-                <i className="fa fa-angle-left"></i>
-              </a>
-              &nbsp;
-              <a className="btn btn-sm ml-2 site-btn" onClick={this.next}>
-                <i className="fa fa-angle-right"></i>
-              </a>
-            </h2>
+        <NewArrivalLoading  isLoading={this.state.isLoading} />
 
-            <p>Some Of Our Exclusive Collection, You May Like</p>
-          </div>
+        <div className={this.state.mainDiv}>
+          <Container className="text-center" fluid={true}>
+            <div className="section-title text-center mb-55">
+              <h2>
+                NEW ARRIVAL &nbsp;
+                <a className="btn btn-sm ml-2 site-btn" onClick={this.previous}>
+                  <i className="fa fa-angle-left"></i>
+                </a>
+                &nbsp;
+                <a className="btn btn-sm ml-2 site-btn" onClick={this.next}>
+                  <i className="fa fa-angle-right"></i>
+                </a>
+              </h2>
 
-          <Row>
-            <Slider ref={(c) => (this.slider = c)} {...settings}>
-              {MyView}
-            </Slider>
-          </Row>
-        </Container>
+              <p>Some Of Our Exclusive Collection, You May Like</p>
+            </div>
+
+            <Row>
+              <Slider ref={(c) => (this.slider = c)} {...settings}>
+                {MyView}
+              </Slider>
+            </Row>
+          </Container>
+        </div>
       </Fragment>
     );
   }

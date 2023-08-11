@@ -9,24 +9,28 @@ import 'react-toastify/dist/ReactToastify.css';
 
 import { Link } from 'react-router-dom';
 
+import CategoryLoading from '../PlaceHolder/CategoryLoading';
+
 class Categories extends Component {
   constructor(){
     super();
     // state
     this.state ={
-      categories: []
+      categories: [],
+      isLoading:"",
+      mainDiv:"d-none"
     }
   }
 
   componentDidMount(){
     axios.get(AppURL.getCategories).then(response =>{ 
-          this.setState({categories:response.data});
+          this.setState({
+            categories:response.data,
+            isLoading:"d-none",
+            mainDiv:" "
+          });
 
-    }).catch(error=>{
-      toast.error("Something Went Wrong",{
-        position: "bottom-center"
-      });
-    });
+    }).catch(error=>{});
   }
 
   render() {
@@ -50,6 +54,9 @@ class Categories extends Component {
 
     return (
       <Fragment>
+        <CategoryLoading isLoading={this.state.isLoading} />
+
+        <div className={this.state.mainDiv}>
         <Container className="text-center" fluid={true}>
           <div className="section-title text-center mb-55">
             <h2> CATEGORIES</h2>
@@ -59,8 +66,8 @@ class Categories extends Component {
           <Row>
             {categoriesView}
           </Row>
-
         </Container>
+        </div>
         
         <ToastContainer />
 
