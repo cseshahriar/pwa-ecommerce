@@ -1,13 +1,23 @@
 import React, { Component } from "react";
 import Slider from "react-slick";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+
 import Slider1 from "../../assets/images/slider1.jpg";
 import Slider2 from "../../assets/images/slider2.jpg";
 import Slider3 from "../../assets/images/slider3.jpg";
 
+import AppURL from '../../api/AppURL';
+import axios from 'axios';
+
+import { ToastContainer, toast } from 'react-toastify';
+
+
 class HomeSlider extends Component {
+
   render() {
+    // slidr settings
     var settings = {
       dots: true,
       infinite: true,
@@ -46,18 +56,18 @@ class HomeSlider extends Component {
       ],
     };
 
+    const SliderData = this.props.sliders;
+
+    const sliderView = SliderData && SliderData.map((slider, i)=>{
+      return  <div key={i.toString()}>
+        <img className="slider-img" src={slider.slider_image} alt=""/>
+      </div>
+    })
+
     return (
       <div>
         <Slider {...settings}>
-          <div>
-            <img className="slider-img" src={Slider1} alt="" />
-          </div>
-          <div>
-            <img className="slider-img" src={Slider2} alt="" />
-          </div>
-          <div>
-            <img className="slider-img" src={Slider3} alt="" />
-          </div>
+          { sliderView }
         </Slider>
       </div>
     );

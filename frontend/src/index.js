@@ -22,6 +22,9 @@ import 'react-toastify/dist/ReactToastify.css';
 // loader div
 import '../src/assets/css/placeholder-loading.min.css';
 
+// import react toastify
+import 'react-toastify/dist/ReactToastify.css';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

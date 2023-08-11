@@ -27,6 +27,8 @@ class AppURL {
         return `${this.BaseURL}/products/subcategory/${category}/${subcategory}`
     }
 
+    // sliders
+    static getHomeSliders = this.BaseURL + "/sliders/home"
 }
 
 export default AppURL

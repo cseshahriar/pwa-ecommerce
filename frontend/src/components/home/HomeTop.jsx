@@ -17,7 +17,8 @@ class HomeTop extends Component {
 
     // state
     this.state ={
-      categories: []
+      categories: [],
+      sliders: []
     }
   }
 
@@ -25,6 +26,14 @@ class HomeTop extends Component {
       axios.get(AppURL.getCategories).then(response =>{ 
             this.setState({categories:response.data});
 
+      }).catch(error=>{
+        toast.error("Something Went Wrong",{
+          position: "bottom-center"
+        });
+      });
+
+      axios.get(AppURL.getHomeSliders).then(response =>{ 
+        this.setState({sliders:response.data});
       }).catch(error=>{
         toast.error("Something Went Wrong",{
           position: "bottom-center"
@@ -43,7 +52,7 @@ class HomeTop extends Component {
             </Col>
 
             <Col lg={9} md={9} sm={12}>
-              <HomeSlider />
+              <HomeSlider sliders={this.state.sliders} />
             </Col>
           </Row>
         </Container>
