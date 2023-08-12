@@ -15,7 +15,7 @@ class CategoryLoading extends Component {
           <div className="row">
             <div className="col-lg-2 col-md-2 col-sm-4 col-6 p-1">
               <a href="" className="card image-box h-100  w-100">
-                <div class="ph-picture"></div>
+                <div className="ph-picture"></div>
                 <div className="ph-item">
                   <div className="ph-col-12">
                     <div className="ph-row">
@@ -28,7 +28,7 @@ class CategoryLoading extends Component {
 
             <div className="col-lg-2 col-md-2 col-sm-4 col-6 p-1">
               <a href="" className="card image-box h-100  w-100">
-                <div class="ph-picture"></div>
+                <div className="ph-picture"></div>
                 <div className="ph-item">
                   <div className="ph-col-12">
                     <div className="ph-row">
@@ -41,7 +41,7 @@ class CategoryLoading extends Component {
 
             <div className="col-lg-2 col-md-2 col-sm-4 col-6 p-1">
               <a href="" className="card image-box h-100  w-100">
-                <div class="ph-picture"></div>
+                <div className="ph-picture"></div>
                 <div className="ph-item">
                   <div className="ph-col-12">
                     <div className="ph-row">
@@ -54,7 +54,7 @@ class CategoryLoading extends Component {
 
             <div className="col-lg-2 col-md-2 col-sm-4 col-6 p-1">
               <a href="" className="card image-box h-100  w-100">
-                <div class="ph-picture"></div>
+                <div className="ph-picture"></div>
                 <div className="ph-item">
                   <div className="ph-col-12">
                     <div className="ph-row">
@@ -67,7 +67,7 @@ class CategoryLoading extends Component {
 
             <div className="col-lg-2 col-md-2 col-sm-4 col-6 p-1">
               <a href="" className="card image-box h-100  w-100">
-                <div class="ph-picture"></div>
+                <div className="ph-picture"></div>
                 <div className="ph-item">
                   <div className="ph-col-12">
                     <div className="ph-row">
@@ -80,7 +80,7 @@ class CategoryLoading extends Component {
 
             <div className="col-lg-2 col-md-2 col-sm-4 col-6 p-1">
               <a href="" className="card image-box h-100  w-100">
-                <div class="ph-picture"></div>
+                <div className="ph-picture"></div>
                 <div className="ph-item">
                   <div className="ph-col-12">
                     <div className="ph-row">
@@ -93,7 +93,7 @@ class CategoryLoading extends Component {
 
             <div className="col-lg-2 col-md-2 col-sm-4 col-6 p-1">
               <a href="" className="card image-box h-100  w-100">
-                <div class="ph-picture"></div>
+                <div className="ph-picture"></div>
                 <div className="ph-item">
                   <div className="ph-col-12">
                     <div className="ph-row">
@@ -106,7 +106,7 @@ class CategoryLoading extends Component {
 
             <div className="col-lg-2 col-md-2 col-sm-4 col-6 p-1">
               <a href="" className="card image-box h-100  w-100">
-                <div class="ph-picture"></div>
+                <div className="ph-picture"></div>
                 <div className="ph-item">
                   <div className="ph-col-12">
                     <div className="ph-row">
@@ -119,7 +119,7 @@ class CategoryLoading extends Component {
 
             <div className="col-lg-2 col-md-2 col-sm-4 col-6 p-1">
               <a href="" className="card image-box h-100  w-100">
-                <div class="ph-picture"></div>
+                <div className="ph-picture"></div>
                 <div className="ph-item">
                   <div className="ph-col-12">
                     <div className="ph-row">
@@ -132,7 +132,7 @@ class CategoryLoading extends Component {
 
             <div className="col-lg-2 col-md-2 col-sm-4 col-6 p-1">
               <a href="" className="card image-box h-100  w-100">
-                <div class="ph-picture"></div>
+                <div className="ph-picture"></div>
                 <div className="ph-item">
                   <div className="ph-col-12">
                     <div className="ph-row">

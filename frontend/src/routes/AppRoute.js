@@ -34,7 +34,7 @@ class AppRoute extends Component {
                     <Route path="/refund" element={<RefundPage/>} />
                     <Route path="/about" element={<AboutPage/>} />
 
-                    <Route path="/productdetails" element={<ProductDetailsPage/>} />
+                    <Route path="/productdetails/:id" element={<ProductDetailsPage/>} />
                     <Route path="/productcategory/:category" element={<ProductCategoryPage/>} />
                     <Route 
                       path="/products/subcategory/:category/:subcategory" 

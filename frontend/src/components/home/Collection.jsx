@@ -38,7 +38,7 @@ class Collection extends Component {
       if (product.special_price == "na") {
         return (
           <Col className="p-1" key={i} xl={2} lg={2} md={2} sm={4} xs={6}>
-            <Link to="/productdetails">
+            <Link to={`/productdetails/${product.id}`}>
               <Card className="image-box card">
                 <img
                   className="center"
@@ -58,7 +58,7 @@ class Collection extends Component {
       } else {
         return (
           <Col className="p-1" key={i} xl={2} lg={2} md={2} sm={4} xs={6}>
-            <Link to="/productdetails">
+            <Link to={`/productdetails/${product.id}`}>
               <Card className="image-box card">
                 <img
                   className="center"
