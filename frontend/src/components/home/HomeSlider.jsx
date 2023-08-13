@@ -53,10 +53,11 @@ class HomeSlider extends Component {
     };
 
     const SliderData = this.props.sliders;
+    console.log('-', SliderData);
 
     const sliderView = SliderData && SliderData.map((slider, i)=>{
       return  <div key={i.toString()}>
-        <img className="slider-img" src={slider.slider_image} alt=""/>
+        <img className="slider-img" src={slider.slider_image} alt={slider.slider_image} />
       </div>
     })
 
