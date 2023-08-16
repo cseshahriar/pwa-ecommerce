@@ -34,6 +34,8 @@ class AppURL {
     static getProductDetails(id) {
         return `${this.BaseURL}/product_details/${id}`
     }
+
+    static getNotifications = this.BaseURL + "/notifications"
 }
 
 export default AppURL
