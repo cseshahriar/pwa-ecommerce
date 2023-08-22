@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from "react";
-import { Container, Row, Col, Form, Button } from "react-bootstrap";
+import { Container, Row, Col, Form, Button, Breadcrumb } from "react-bootstrap";
 import AppURL from "../../api/AppURL";
 import axios from "axios";
 import validation from "../../validation/validation";
 
 import { ToastContainer, toast } from 'react-toastify';
 
-
+import {Link} from 'react-router-dom'; 
 class Contact extends Component {
   constructor() {
     super();
@@ -86,6 +86,17 @@ class Contact extends Component {
     return (
       <Fragment>
         <Container>
+          <div className="breadbody">
+              <Breadcrumb>
+                  <Breadcrumb.Item>
+                    <Link to="/">Home</Link>
+                  </Breadcrumb.Item>
+                  <Breadcrumb.Item>
+                    <Link to="/contact">Contact</Link>
+                  </Breadcrumb.Item>
+              </Breadcrumb>
+          </div>
+
           <Row className="p-2">
             <Col
               className="shadow-sm bg-white mt-2"

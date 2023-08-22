@@ -1,7 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Navbar, Container, Row, Col, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
-
 import Bars from '../../assets/images/bars.png';
 import Logo from "../../assets/images/easyshop.png";
 

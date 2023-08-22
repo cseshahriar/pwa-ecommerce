@@ -27,6 +27,7 @@ class AppRoute extends Component {
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<HomePage />} />
+
                     <Route path="/login" element={<UserLoginPage/>} />
                     <Route path="/contact" element={<ContactPage/>} />
                     <Route path="/purchase" element={<PurchasePage/>} />

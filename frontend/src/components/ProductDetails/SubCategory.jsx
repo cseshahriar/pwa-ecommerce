@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Fragment } from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row, Col, Card, Breadcrumb } from "react-bootstrap";
 import { Link } from 'react-router-dom'
 
 class SubCategory extends Component {
@@ -48,6 +48,24 @@ class SubCategory extends Component {
     return (
       <Fragment>
         <Container className="text-center" fluid={true}>
+          <div className="breadbody">
+            <Breadcrumb>
+                <Breadcrumb.Item>
+                  <Link to="/">Home</Link>
+                </Breadcrumb.Item>
+               
+                <Breadcrumb.Item>
+                  <Link to={`/productcategory/${category}`}>{category}</Link>
+                </Breadcrumb.Item>
+
+                <Breadcrumb.Item>
+                  <Link to={`/products/subcategory/${category}/${subCategory}`}>
+                  {subCategory}
+                  </Link>
+                </Breadcrumb.Item>
+            </Breadcrumb>
+          </div>
+
           <div className="section-title text-center mb-55">
             <h2>
               {" "}

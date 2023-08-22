@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Fragment } from "react";
-import { Container, Row, Col, Card } from "react-bootstrap";
+import { Container, Row, Col, Card, Breadcrumb } from "react-bootstrap";
 import { Link } from 'react-router-dom'
 
 class Category extends Component {
@@ -9,7 +9,7 @@ class Category extends Component {
     const {category} = this.props;
 
     const MyView = MyList.map((ProductList, i) => {
-      if (ProductList.special_price == "na") {
+      if (ProductList.special_price === "na") {
         return (
           <Col key={i} className="p-0" xl={3} lg={3} md={3} sm={6} xs={6}>
             <Link to={"/productdetails/"+ProductList.id} >
@@ -51,6 +51,17 @@ class Category extends Component {
     return (
       <Fragment>
         <Container className="text-center" fluid={true}>
+        <div className="breadbody">
+            <Breadcrumb>
+                <Breadcrumb.Item>
+                  <Link to="/">Home</Link>
+                </Breadcrumb.Item>
+                <Breadcrumb.Item>
+                  <Link to={`/productcategory/${category}`}>{category}</Link>
+                </Breadcrumb.Item>
+            </Breadcrumb>
+          </div>
+
           <div className="section-title text-center mb-55">
             <h2> {category} </h2>
           </div>

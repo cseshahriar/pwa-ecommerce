@@ -4,16 +4,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import AppURL from '../../api/AppURL';
-import axios from 'axios';
-
-import { ToastContainer, toast } from 'react-toastify';
-
 
 class HomeSlider extends Component {
 
   render() {
-    // slidr settings
+    // slider settings
     var settings = {
       dots: true,
       infinite: true,
