@@ -31,9 +31,18 @@ class ProductController extends Controller
     
     public function productBySubCategory(Request $request)
     {
-            $category = $request->category;
-            $subcategory = $request->subcategory;
-            $products = Product::where('category', $category)->where('subcategory', $subcategory)->get();
-            return $products;
+        $category = $request->category;
+        $subcategory = $request->subcategory;
+        $products = Product::where('category', $category)->where('subcategory', $subcategory)->get();
+        return $products;
     }
+
+    // search by params
+    public function ProductBySearch(Request $request) {
+        $key = $request->key;
+        $product_list = Product::where('title', 'LIKE', "%{$key}%")->orWhere(
+            'brand', 'LIKE', "%{$key}%"
+        )->get();
+        return $product_list;
+    } // end function
 }

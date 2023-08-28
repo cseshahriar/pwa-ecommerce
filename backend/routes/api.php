@@ -66,6 +66,9 @@ Route::get(
     [ProductController::class, 'productBySubCategory']
 )->name('products.subcategory');
 
+// search route 
+Route::get('/search/{key}', [ProductController::class, 'ProductBySearch']);
+
 // get product details
 Route::get(
     '/product_details/{id}',
