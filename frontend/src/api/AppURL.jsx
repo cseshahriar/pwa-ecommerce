@@ -35,6 +35,11 @@ class AppURL {
         return `${this.BaseURL}/product_details/${id}`
     }
 
+    // product by search
+    static ProductBySearch(searchKey) {
+        return `${this.BaseURL}/search/${searchKey}`
+    }
+
     static getNotifications = this.BaseURL + "/notifications"
 }
 

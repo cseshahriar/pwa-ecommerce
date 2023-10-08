@@ -1,18 +1,42 @@
 import React, { Component, Fragment } from "react";
 import { Navbar, Container, Row, Col, Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import Bars from '../../assets/images/bars.png';
 import Logo from "../../assets/images/easyshop.png";
-
 import MegaMenuAll from "../home/MegaMenuAll";
 
 class NavMenuDesktop extends Component {
   constructor() {
     super();
+    
     this.state = {
       SideNavState: "sideNavClose",
       ContentOverState: "ContentOverlayClose",
+      searchKey:"",
+      searchRedirectStatus: false
     };
+
+    this.searchOnChange = this.searchOnChange.bind(this);
+    this.searchOnClick = this.searchOnClick.bind(this);
+    this.searchRedirect = this.searchRedirect.bind(this);
+  }
+
+  searchRedirect(){
+    if(this.state.searchRedirectStatus === true){
+      return <Navigate to={"/productbysearch/"+this.state.searchKey} />;
+    }
+  }
+
+  searchOnChange(event){
+    let searchKey = event.target.value;
+    // alert(searchKey);
+    this.setState({searchKey:searchKey});
+  }
+
+  searchOnClick() {
+      if(this.state.searchKey.length >= 2 ) {
+          this.setState({searchRedirectStatus:true})
+      }
   }
 
   MenuBarClickHandler = () => {
@@ -58,12 +82,12 @@ class NavMenuDesktop extends Component {
                 </Col>
 
                 <Col className="p-1 mt-1" lg={4} md={4} sm={12} xs={12}>
-                  <div className="input-group w-100">
-                    <input type="text" className="form-control" />
-                    <Button type="button" className="btn site-btn">
-                      <i className="fa fa-search"> </i>
-                    </Button>
-                  </div>
+                    <div className="input-group w-100">
+                      <input onChange={this.searchOnChange} type="text" className="form-control" />
+                      <Button onClick={this.searchOnClick} type="button" className="btn site-btn">
+                        <i className="fa fa-search"> </i> 
+                      </Button>
+                    </div>
                 </Col>
 
                 <Col className="p-1 mt-1" lg={4} md={4} sm={12} xs={12}>
@@ -91,6 +115,7 @@ class NavMenuDesktop extends Component {
                   </Link>
                 </Col>
               </Row>
+              {this.searchRedirect()}
             </Container>
           </Navbar>
         </div>

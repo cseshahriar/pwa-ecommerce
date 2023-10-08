@@ -33,7 +33,7 @@ class ProductCategoryPage extends Component {
  
     axios.get(AppURL.getProductByCategory(category)).then(response =>{
         let StatusCode = response.status;
-        if(StatusCode == 200){
+        if(StatusCode === 200){
           this.setState({products: response.data});
         } 
     }).catch(error=>{
