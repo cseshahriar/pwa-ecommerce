@@ -1,9 +1,10 @@
 import React, { Component, Fragment } from "react";
 import { Container, Row, Col, Form, Button } from "react-bootstrap";
-import { Link } from 'react-router-dom'
-import Login from "../../assets/images/login.png";
+import { Link } from "react-router-dom";
 
-class UserLogin extends Component {
+import Forget from "../../assets/images/forget.jpg";
+
+class ForgetPassword extends Component {
   render() {
     return (
       <Fragment>
@@ -25,22 +26,23 @@ class UserLogin extends Component {
                   xs={12}
                 >
                   <Form className="onboardForm">
-                    <h4 className="section-title-login"> USER SING IN </h4>
-                    <input className="form-control m-2" type="email" placeholder="Enter Your Email" />
-                    <input className="form-control m-2" type="password" placeholder="Enter Your Password" />
-                    <Button className="btn btn-block m-2 site-btn-login"> Login </Button>
+                    <h4 className="section-title-login"> FORGET PASSWORD ? </h4>
 
-                    <br></br> <br></br>
-                    <hr />
-                    <p> <b> Forget Password? </b><Link><b> Forget Password </b> </Link> </p>
+                    <input
+                      className="form-control m-2"
+                      type="email"
+                      placeholder="Enter Your Email"
+                    />
 
-                    <p> <b> Don't Have An Account ? </b><Link to="/register"><b> Register </b> </Link> </p>
-
+                    <Button className="btn btn-block m-2 site-btn-login">
+                      {" "}
+                      Reset Password{" "}
+                    </Button>
                   </Form>
                 </Col>
 
                 <Col className="p-0 Desktop m-0" md={6} lg={6} sm={6} xs={6}>
-                  <img className="onboardBanner" src={Login} alt="" />
+                    <img className="onboardBanner" src={Forget} alt="" />
                 </Col>
               </Row>
             </Col>
@@ -51,4 +53,4 @@ class UserLogin extends Component {
   }
 }
 
-export default UserLogin;
+export default ForgetPassword;
