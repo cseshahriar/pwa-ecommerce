@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Auth;
 use App\Models\User;
+use Illuminate\Http\Request;
 
 use App\Http\Requests\ForgetRequest;
-use DB;
 use Illuminate\Support\Facades\Hash;
-use Mail;
 use App\Mail\ForgetMail;
+
+use DB;
+use Mail;
 
 class ForgetController extends Controller
 {
@@ -23,11 +24,11 @@ class ForgetController extends Controller
     		],401);
     	}
 
-    	// generate Randome Token 
+    	// generate Radome Token 
     	$token = rand(10,100000);
 
     	try{
-    		DB::table('password_resets')->insert([
+    		DB::table('password_reset_tokens')->insert([
     			'email' => $email,
     			'token' => $token
     		]);

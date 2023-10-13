@@ -18,8 +18,8 @@ class ResetController extends Controller
     	$token = $request->token;
     	$password = Hash::make($request->password);
 
-    	$emailcheck = DB::table('password_resets')->where('email',$email)->first();
-    	$pincheck = DB::table('password_resets')->where('token',$token)->first();
+    	$emailcheck = DB::table('password_reset_tokens')->where('email',$email)->first();
+    	$pincheck = DB::table('password_reset_tokens')->where('token',$token)->first();
 
     	if (!$emailcheck) {
     		return response([
@@ -33,7 +33,7 @@ class ResetController extends Controller
     	 }
 
     	 DB::table('users')->where('email',$email)->update(['password' => $password]);
-    	 DB::table('password_resets')->where('email',$email)->delete();
+    	 DB::table('password_reset_tokens')->where('email',$email)->delete();
 
     	 return response([
     	 	'message' => 'Password Change Successfully'

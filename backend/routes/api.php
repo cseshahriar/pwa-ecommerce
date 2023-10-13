@@ -98,8 +98,10 @@ Route::post('/login', [AuthController::class, 'Login']);
 Route::post('/register', [AuthController::class, 'Register']);
 Route::post('/forgetpassword', [ForgetController::class, 'ForgetPassword']);
 Route::post('/resetpassword', [ResetController::class, 'ResetPassword']);
-Route::post('/user', [UserController::class, 'user'])->middleware('auth:api');
+Route::get(
+    '/user', [UserController::class, 'user']
+)->middleware('auth:api');
 
 // api protected route
-Route::group(['namespace' => 'Api', 'prefix' => 'v1'], function () {  
-});
+// Route::group(['namespace' => 'Api', 'prefix' => 'v1'], function () {  
+// });

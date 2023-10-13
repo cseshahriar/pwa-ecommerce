@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+use DB;
 use Auth;
 use App\Models\User;
-
-use App\Http\Requests\RegiserRequest;
-use DB;
+use Illuminate\Http\Request;
+use App\Http\Requests\RegisterRequest;
 use Illuminate\Support\Facades\Hash;
 
 class AuthController extends Controller
@@ -42,8 +41,8 @@ class AuthController extends Controller
 
 
 
-    public function Register(RegiserRequest $request){
-
+    public function Register(RegisterRequest $request) {
+		
     	try{
 
     		$user = User::create([
@@ -54,25 +53,16 @@ class AuthController extends Controller
     		$token = $user->createToken('app')->accessToken;
 
     		return response([
-    			'message' => "Registration Successfull",
+    			'message' => "Registration Successful",
     			'token' => $token,
     			'user' => $user
-    		],200);
+    		], 200);
 
-	    	}catch(Exception $exception){
-	    		return response([
-	    			'message' => $exception->getMessage()
-	    		],400);
-	    	}
-
-
-
-
-    } // end mehtod 
-
-
-
-
-
+	    } catch(Exception $exception){
+			return response([
+				'message' => $exception->getMessage()
+			],400);
+	    }
+    } // end method
 }
  
