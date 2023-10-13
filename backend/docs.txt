@@ -15,4 +15,12 @@ php artisan make:model Product -m
 php artisan make:migration add_start_to_products  # add new field star
 php artisan make:migration add_id_to_products  # add new field star
 
+Encryption keys generated successfully.
+Personal access client created successfully.
+Client ID: 1
+Client secret: cfga4CHV7kzqvVaEd57bhwL5Zq4oK4m6ahX6WgBb
+Password grant client created successfully.
+Client ID: 2
+Client secret: SMoeS1xGAJ98JBbbELjUEmwP1cpWriBeXW0Xtdff
+
 # javascript 

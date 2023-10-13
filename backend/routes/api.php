@@ -11,7 +11,8 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductDetailController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\NotificationController;
-// client user
+
+// client auth controllers
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ForgetController;
 use App\Http\Controllers\ResetController;
@@ -92,9 +93,13 @@ Route::get(
     [NotificationController::class, 'index']
 )->name('notifications.index');
 
-// use authentication
+// ================== client authentication ===================================
 Route::post('/login', [AuthController::class, 'Login']);
 Route::post('/register', [AuthController::class, 'Register']);
-Route::post('/forgetpassword', [ForgetController::class, 'ForgetPasswrd']);
-Route::post('/resetpassword', [ResetController::class, 'ResetPasswrd']);
+Route::post('/forgetpassword', [ForgetController::class, 'ForgetPassword']);
+Route::post('/resetpassword', [ResetController::class, 'ResetPassword']);
 Route::post('/user', [UserController::class, 'user'])->middleware('auth:api');
+
+// api protected route
+Route::group(['namespace' => 'Api', 'prefix' => 'v1'], function () {  
+});

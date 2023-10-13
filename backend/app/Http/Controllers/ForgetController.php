@@ -44,13 +44,6 @@ class ForgetController extends Controller
     			'message' => $exception->getMessage()
     		],400);
     	}
-    } // end mehtod 
-
-
-
-
-
-
-
+    } // end method
 }
  

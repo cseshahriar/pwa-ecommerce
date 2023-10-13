@@ -41,8 +41,5 @@ class ResetController extends Controller
     
 
     }// end method 
-
-
-
 }
  
