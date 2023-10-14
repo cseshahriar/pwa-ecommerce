@@ -41,6 +41,14 @@ class AppURL {
     }
 
     static getNotifications = this.BaseURL + "/notifications"
+
+    // client authentication
+    static userLogin = this.BaseURL + "/login"
+    static userRegister = this.BaseURL + "/register"
+    static forgetPassword = this.BaseURL + "/forgetpassword"
+    static resetPassword = this.BaseURL + "/resetpassword"
+    static user = this.BaseURL + "/user"
+
 }
 
 export default AppURL

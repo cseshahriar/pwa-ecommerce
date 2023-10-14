@@ -25,12 +25,34 @@ import ForgetPasswordPage from '../pages/ForgetPasswordPage';
 import ResetPasswordPage from '../pages/ResetPasswordPage';
 import ProfilePage from '../pages/ProfilePage';
 
+import axios from 'axios'
+import AppURL from '../../src/api/AppURL';
+import NavMenuDesktop from '../components/common/NavMenuDesktop';
+
 class AppRoute extends Component {
-  
+  constructor() {
+    super();
+    this.state={
+      user:{}
+    }
+  }
+
+  setUser = (user) => {
+    this.setState({user: user})
+  }
+
+  componentDidMount() {
+    axios.get(AppURL.user).then(response =>{
+      this.setUser(response.data);
+    }).catch(error=> {
+    });
+  }
+
   render() {
     return (
        <Fragment>
             <BrowserRouter>
+                <NavMenuDesktop user={this.user} setUser={this.setUser} />
                 <Routes>
                     <Route path="/" element={<HomePage />} />
 
@@ -38,7 +60,10 @@ class AppRoute extends Component {
                     <Route path="/register" element={<RegisterPage  /> } />
                     <Route path="/forget" element={<ForgetPasswordPage /> } />
                     <Route path="/reset/:id" element={<ResetPasswordPage /> } />
-                    <Route path="/profile" element={<ProfilePage /> } />
+                    <Route 
+                      path="/profile"
+                      element={<ProfilePage user={this.user} setUser={this.setUser} 
+                    /> } />
 
                     <Route path="/contact" element={<ContactPage/>} />
                     <Route path="/purchase" element={<PurchasePage/>} />

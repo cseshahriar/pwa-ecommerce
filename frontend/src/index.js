@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+import axios from 'axios';
 
 // react slick slider
 import 'slick-carousel/slick/slick.css';
@@ -24,6 +25,8 @@ import '../src/assets/css/placeholder-loading.min.css';
 
 // import react toastify
 import 'react-toastify/dist/ReactToastify.css';
+
+axios.defaults.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('token');
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

@@ -11,6 +11,7 @@ class ProfilePage extends Component {
   }
 
   render() {
+    const user = this.props.user;
     return (
       <Fragment>
         <div className="Desktop">
@@ -21,7 +22,7 @@ class ProfilePage extends Component {
           <NavMenuMobile />
         </div>
 
-        <Profile />
+        <Profile user={user} />
 
         <div className="Desktop">
           <FooterDesktop />
